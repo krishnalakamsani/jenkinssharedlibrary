@@ -1,4 +1,4 @@
-def call (String label = 'a', String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String dockerhubCred = 'a', String path = 'a')
+def call (String label = 'a', String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String dockerhubCred = 'a', String path = 'a') {
 pipeline {
   agent {
       label '$label'
@@ -26,4 +26,5 @@ pipeline {
         }
     }
   }
+}
 }
