@@ -1,12 +1,9 @@
-def call (String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String dockerhubCred = 'a', String path = 'a') {
+def call (String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String path = 'a') {
 pipeline {
   agent {
       label 'docker'
     }
-    environment {
-		LOGIN_CREDENTIALS=credentials('$dockerhubCred')
-	}
-  stages {
+     stages {
     stage('Checkout') {
       steps {
         git branch: '$gitBranch', url: '$gitUrl'
@@ -21,7 +18,6 @@ pipeline {
     stage('Build and Push Docker Image') {
       steps {
         sh 'docker build -t $imageName:$BUILD_NUMBER .'
-        sh 'echo $LOGIN_CREDENTIALS_PSW | docker login -u $LOGIN_CREDENTIALS_USR --password-stdin'
         sh 'docker push $imageName:$BUILD_NUMBER'
         }
     }
