@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Build') {
       steps {
-        sh 'cd jenkins/workspace/fleetapp-k8s-fleetman-api-gateway/sourcecode/k8s-fleetman-api-gateway'
+        sh 'cd "jenkins/workspace/fleetapp-k8s-fleetman-api-gateway/sourcecode/k8s-fleetman-api-gateway"'
         sh 'mvn clean package'
         }
     }
