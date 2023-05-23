@@ -1,4 +1,4 @@
-def call (String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String path = 'a') {
+def call (String gitBranch = 'main', String gitUrl = 'https://github.com/krishnalakamsani/fleetapp.git', String imageName = 'krishnalakamsani/fleetappapi', String path = 'sourcecode/k8s-fleetman-api-gateway') {
 pipeline {
   agent {
       label 'docker'
