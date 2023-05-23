@@ -6,7 +6,7 @@ pipeline {
      stages {
     stage('Checkout') {
       steps {
-        git branch: '${gitBranch}', url: '${gitUrl}'
+        git branch: '${gitBranch}', url: 'https://github.com/krishnalakamsani/fleetapp.git'
         }
     }
     stage('Build') {
