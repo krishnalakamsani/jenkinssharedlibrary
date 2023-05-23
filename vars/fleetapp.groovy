@@ -1,7 +1,7 @@
-def call (String label = 'a', String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String dockerhubCred = 'a', String path = 'a') {
+def call (String gitBranch = 'a', String gitUrl = 'a', String imageName = 'a', String dockerhubCred = 'a', String path = 'a') {
 pipeline {
   agent {
-      label '$label'
+      label 'docker'
     }
     environment {
 		LOGIN_CREDENTIALS=credentials('$dockerhubCred')
